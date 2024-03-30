@@ -1,24 +1,75 @@
-# README
+**URL Shortener Backend API**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository contains the backend functionality for a URL shortener project implemented using Ruby on Rails. The backend provides endpoints for creating shortened URLs and retrieving URL details.
 
-Things you may want to cover:
+**Endpoints**
 
-* Ruby version
+**POST /URLs**
 
-* System dependencies
+This endpoint is used to create a new shortened URL.
 
-* Configuration
+**Request Body**
 
-* Database creation
+**original_url:** The original URL to be shortened.
 
-* Database initialization
+**Response**
 
-* How to run the test suite
+**201 Created:** If the URL is successfully created, return the created URL details.
 
-* Services (job queues, cache servers, search engines, etc.)
+**422 Unprocessable Entity:** If there's an error in the request body, returns validation errors.
 
-* Deployment instructions
 
-* ...
+**GET /urls/:id**
+
+This endpoint is used to retrieve a shortened URL by its short URL attribute.
+
+**Response**
+
+**200 OK: ** If the URL is found, return the URL details.
+
+**404 Not Found:** If the URL is not found.
+
+
+**Model**
+
+**Url**
+
+Represents the URL model with the following attributes:
+
+**original_url:** The original URL.
+**short_url:** The shortened URL.
+**click_count:** The number of times the URL has been clicked.
+
+
+**Controller**
+
+**UrlsController**
+
+Handles the logic for creating and retrieving shortened URLs.
+
+**Configuration**
+
+**ApplicationController:** The base controller class for the Rails application, configured for API-only 
+
+functionality.
+
+**Application configuration:** The config/api_only = true configuration in config/application.rb indicates 
+
+that the Rails application is API-only.
+
+**Database Migration**
+
+**CreateUrls:** Defines the schema for the URLs table in the database, including columns for original_url, 
+short_url, click_count, and timestamps.
+
+
+**Initialization**
+
+**Rails application initialization:** The Rails.application.initialize! line in config/environment.rb 
+initializes the Rails application.
+
+
+**Testing**
+
+You can test these endpoints using tools like cURL, and Postman, or by making HTTP requests from your
+frontend application.
