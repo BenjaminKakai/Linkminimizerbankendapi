@@ -11,7 +11,7 @@ module UrlShortenerApi
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         # Replace 'http://localhost:3001' with your Heroku app URL
-        origins 'https://quiet-caverns-95907-14695f2a4a5c.herokuapp.com'
+        origins 'https://urlfrontend-15935609b1f4.herokuapp.com/'
         resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head]
       end
     end
