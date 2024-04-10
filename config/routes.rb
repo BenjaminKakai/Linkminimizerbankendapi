@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
-  post '/shorten', to: 'urls#create'  # Route for short URL creation
+  # Other routes...
+
+  # Define a route to handle POST requests to "/shorten"
+  post '/shorten', to: 'urls#create'
+
   resources :short_urls, only: [:show], param: :short_code
+
+  # Route to handle redirection from short URL to original URL
+  get '/:short_code', to: 'short_urls#redirect'
 end

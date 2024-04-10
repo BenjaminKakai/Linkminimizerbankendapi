@@ -1,5 +1,5 @@
 current directory: /home/benjamin/url_shortener_api/vendor/bundle/ruby/3.1.0/gems/date-3.3.4/ext/date
-/usr/bin/ruby3.1 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20240330-13226-qxtnik.rb extconf.rb
+/home/benjamin/.rbenv/versions/3.1.2/bin/ruby -I /home/benjamin/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20240404-97978-lwuwly.rb extconf.rb
 checking for rb_category_warn()... yes
 checking for timezone in time.h with  -Werror... yes
 checking for altzone in time.h with  -Werror... no
@@ -18,4 +18,4 @@ linking shared-object date_core.so
 
 current directory: /home/benjamin/url_shortener_api/vendor/bundle/ruby/3.1.0/gems/date-3.3.4/ext/date
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 date_core.so ./.gem.20240330-13226-sewi2y
+/usr/bin/install -c -m 0755 date_core.so ./.gem.20240404-97978-rh0vh5

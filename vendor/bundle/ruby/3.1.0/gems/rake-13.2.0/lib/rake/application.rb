@@ -165,7 +165,13 @@ module Rake
 
     # Application options from the command line
     def options
-      @options ||= OpenStruct.new
+      @options ||= Struct.new(
+        :always_multitask, :backtrace, :build_all, :dryrun,
+        :ignore_deprecate, :ignore_system, :job_stats, :load_system,
+        :nosearch, :rakelib, :show_all_tasks, :show_prereqs,
+        :show_task_pattern, :show_tasks, :silent, :suppress_backtrace_pattern,
+        :thread_pool_size, :trace, :trace_output, :trace_rules
+      ).new
     end
 
     # Return the thread pool used for multithreaded processing.
@@ -237,7 +243,7 @@ module Rake
       display_exception_details_seen << ex
 
       display_exception_message_details(ex)
-      display_exception_backtrace(ex)
+      display_exception_backtrace(ex) if ex.backtrace
       display_cause_details(ex.cause) if has_cause?(ex)
     end
 
