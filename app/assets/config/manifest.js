@@ -1,1 +1,1 @@
-//= link_tree /home/benjamin/url_shortener_frontend/src
+//= link_tree ../../../url_shortener_frontend/src/components/UrlShortener
