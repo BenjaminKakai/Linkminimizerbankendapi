@@ -1,1 +1,1 @@
-//= link_tree ../../../../../UrlShortener
+//= link_tree ../../../public/frontend
