@@ -1,13 +1,13 @@
-class UrlsController < ApplicationController
+class ShortUrlsController < ApplicationController
   # Rest of your controller code remains the same
 
   # Add the index action here
   def index
-    # This will automatically render the `index.html.erb` view in `app/views/urls/`
+    # This will automatically render the `index.html.erb` view in `app/views/short_urls/`
     # You don't need to add any code here unless you want to pass variables to the view.
   end
 
-  def create
+  def shorten
     long_url = params[:url] # Change from :long_url to :url
     short_url = generate_short_url
 
