@@ -7,7 +7,19 @@ class ShortUrlsController < ApplicationController
     # render json: @short_urls # This line renders JSON, which is causing the issue
     # Instead, render the HTML view
     render 'urls/index'
+  
   end
+
+  def test
+    short_url = ShortUrl.find_by(short_code: params[:id])
+    # render json: @short_urls # This line renders JSON, which is causing the issue
+    # Instead, render the HTML view
+    render json: { error: 'Short URL not found', data: short_url }, status: :not_found
+
+  end
+  
+
+
 
   def shorten
     long_url = params[:url] # Change from :long_url to :url
@@ -23,8 +35,9 @@ class ShortUrlsController < ApplicationController
     end
   end
 
+
   def show
-    short_url = ShortUrl.find_by(short_code: params[:id])
+    short_url = ShortUrl.find_by(short_code: params[:short_code])
 
     if short_url
       redirect_to short_url.original_url
