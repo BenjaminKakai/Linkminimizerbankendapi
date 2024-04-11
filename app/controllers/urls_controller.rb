@@ -1,5 +1,7 @@
 class UrlsController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  before_action :verify_authenticity_token, only: [:create] # Add this line
+
+  # Rest of your controller code remains the same
 
   # Add the index action here
   def index
