@@ -1,5 +1,7 @@
-class ShortUrlsController < ApplicationController
-  # Rest of your controller code remains the same
+# app/controllers/urls_controller.rb
+
+class UrlsController < ApplicationController
+  before_action :verify_authenticity_token
 
   # Add the index action here
   def index
