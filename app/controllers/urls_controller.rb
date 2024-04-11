@@ -1,6 +1,4 @@
 class UrlsController < ApplicationController
-  before_action :verify_authenticity_token, only: [:create] # Add this line
-
   # Rest of your controller code remains the same
 
   # Add the index action here
