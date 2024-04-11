@@ -1,6 +1,12 @@
 class UrlsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
+  # Add the index action here
+  def index
+    # This will automatically render the `index.html.erb` view in `app/views/urls/`
+    # You don't need to add any code here unless you want to pass variables to the view.
+  end
+
   def create
     long_url = params[:url] # Change from :long_url to :url
     short_url = generate_short_url
@@ -19,7 +25,7 @@ class UrlsController < ApplicationController
     short_url = ShortUrl.find_by(short_code: params[:id])
 
     if short_url
-      redirect_to short_url.long_url
+      redirect_to short_url.original_url
     else
       render json: { error: 'Short URL not found' }, status: :not_found
     end
