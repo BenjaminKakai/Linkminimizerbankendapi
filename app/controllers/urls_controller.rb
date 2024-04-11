@@ -1,11 +1,9 @@
-# app/controllers/urls_controller.rb
-
 class UrlsController < ApplicationController
   before_action :verify_authenticity_token
 
   # Add the index action here
   def index
-    # This will automatically render the `index.html.erb` view in `app/views/short_urls/`
+    # This will automatically render the `index.html.erb` view in `app/views/urls/`
     # You don't need to add any code here unless you want to pass variables to the view.
   end
 

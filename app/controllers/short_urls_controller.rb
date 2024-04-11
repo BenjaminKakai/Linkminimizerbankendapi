@@ -14,6 +14,14 @@ class ShortUrlsController < ApplicationController
     end
   end
 
+  # Method to display a list of short URLs
+  def index
+    @short_urls = ShortUrl.all
+    # render json: @short_urls # This line renders JSON, which is causing the issue
+    # Instead, render the HTML view
+    render 'urls/index'
+  end
+
   private
 
   def generate_short_url
