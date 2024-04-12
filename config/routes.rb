@@ -12,5 +12,8 @@ Rails.application.routes.draw do
   # Define the root route
   root to: 'short_urls#index'  # Assuming you want to use the ShortUrlsController and its index action as the landing page
 
+  # Add OPTIONS route to handle CORS preflight requests
+  match '*path', to: 'cors#cors_preflight_check', via: [:options]
+
   # Other routes...
 end
