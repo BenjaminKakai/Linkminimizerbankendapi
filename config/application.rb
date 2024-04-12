@@ -10,7 +10,7 @@ module UrlShortenerApi
     # Configuration for the Rack CORS middleware
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'https://urlfrontend-15935609b1f4.herokuapp.com/', 'http://localhost:3001'
+        origins 'https://vercel.com/benjaminkakais-projects/link-minimizer-react-front-end/BeZiXLemnE78T2qYcZ917yp3q5Hk', 'http://localhost:3001'
         resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head]
       end
     end
